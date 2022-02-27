@@ -89,6 +89,7 @@ void clawoperator() {
   wait(1,seconds);
 }
 
+//old function
 void clawfloor() {
   ArmMotor.setStopping(hold);
   ArmMotor.setMaxTorque(60, percent);
@@ -123,12 +124,12 @@ void clawbox() {
 }
 
 int whenStarted() {
-  //for(int i = 0; i < 3; i++) {
-    //clawfloor();
-    //drivepath();
-    //clawbox();
-    //drivepath();
-  //}
+  /*for(int i = 0; i < 3; i++) {
+    clawfloor();
+    drivepath();
+    clawbox();
+    drivepath();
+  }*/
   ArmMotor.setStopping(hold);
   ArmMotor.setMaxTorque(60, percent);
   ArmMotor.setTimeout(2, seconds);
