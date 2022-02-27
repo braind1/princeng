@@ -14,8 +14,8 @@
 
 using namespace vex;
 
-int main() {
+/*int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   
-}
+}*/
