@@ -78,6 +78,7 @@ void drivepath() {
   wait(1,seconds);
 }
 
+//old function
 void clawoperator() {
   ClawMotor.setStopping(hold); 
   ClawMotor.setMaxTorque(60, percent);
