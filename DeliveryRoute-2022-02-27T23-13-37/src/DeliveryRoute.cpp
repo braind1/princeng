@@ -57,7 +57,7 @@ using namespace vex;
 void drivepath() {
   Drivetrain.driveFor(forward,500,mm); //drives backwards
   wait(1,seconds);
-  if(ArmMotor.position(-45,degrees)) { //detects if arm is near floor (holding block)
+  if(ArmMotor.position(degrees)==-45) { //detects if arm is near floor (holding block)
     Drivetrain.turnFor(left,190,degrees); //spins around
     wait(1,seconds);
     ArmMotor.setStopping(hold);
