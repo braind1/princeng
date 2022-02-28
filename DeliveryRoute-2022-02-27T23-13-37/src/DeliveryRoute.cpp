@@ -12,7 +12,7 @@
 using namespace vex;
 
 // Brain should be defined by default
-brain Brain;
+//brain Brain;
 
 
 // START V5 MACROS
