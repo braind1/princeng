@@ -57,8 +57,8 @@ using namespace vex;
 void drivepath() {
   Drivetrain.driveFor(forward,500,mm); //drives backwards
   wait(1,seconds);
-  if(ArmMotor.position(degrees)==-45) { //detects if arm is near floor (holding block)
-    Drivetrain.turnFor(left,190,degrees); //spins around
+  if(-48.0>=ArmMotor.position(degrees)>=-40.0) { //detects if arm is near floor (holding block)
+    Drivetrain.turnFor(left,210,degrees); //spins around
     wait(1,seconds);
     ArmMotor.setStopping(hold);
     ArmMotor.setMaxTorque(60, percent);
@@ -71,7 +71,7 @@ void drivepath() {
     ArmMotor.setTimeout(2, seconds);
     ArmMotor.spinToPosition(-45,degrees); //lowers arm
     wait(1,seconds);
-    Drivetrain.turnFor(right,190,degrees); //spins around
+    Drivetrain.turnFor(right,210,degrees); //spins around
     wait(1,seconds);
   }
   Drivetrain.driveFor(reverse,500,mm); //drives forwards
@@ -143,4 +143,28 @@ int whenStarted() {
 
 int main() {
   whenStarted();
+  /*ArmMotor.setStopping(hold);
+  ArmMotor.setMaxTorque(60, percent);
+  ArmMotor.setTimeout(2, seconds);
+  ArmMotor.spinToPosition(-45, degrees); //set arm just above floor
+  wait(1,seconds);
+  if(-48.0>=ArmMotor.position(degrees)>=-40.0) {
+    Brain.Screen.print("success");
+  } else {
+    Brain.Screen.print("fail");
+  }
+  Brain.Screen.print("%f", ArmMotor.position(degrees));
+  wait(5,seconds);
+  ArmMotor.setStopping(hold);
+  ArmMotor.setMaxTorque(60, percent);
+  ArmMotor.setTimeout(2, seconds);
+  ArmMotor.spinToPosition(-240, degrees); //raises arm
+  wait(1,seconds);
+  if(-245.0>=ArmMotor.position(degrees)>=-235.0) {
+    Brain.Screen.print("success");
+  } else {
+    Brain.Screen.print("fail");
+  }
+  Brain.Screen.print("%f", ArmMotor.position(degrees));
+  wait(5,seconds);*/
 }
