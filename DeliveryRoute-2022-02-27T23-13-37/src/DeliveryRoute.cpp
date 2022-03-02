@@ -88,53 +88,12 @@ void clawoperator() {
   wait(1,seconds);
 }
 
-//old function
-void clawfloor() {
-  ArmMotor.setStopping(hold);
-  ArmMotor.setMaxTorque(60, percent);
-  ArmMotor.setTimeout(2, seconds);
-  ArmMotor.spinToPosition(-45,degrees); //set arm just above floor
-  ClawMotor.setStopping(hold); 
-  ClawMotor.setMaxTorque(60, percent);
-  ClawMotor.setTimeout(2, seconds);
-  ClawMotor.spinToPosition(180, degrees); //opens the claw
-  wait(2,seconds);
-  ClawMotor.spinToPosition(0, degrees); //closes the claw
-  wait(1,seconds);
-}
-
-//old function
-void clawbox() {
-  ArmMotor.setStopping(hold);
-  ArmMotor.setMaxTorque(60, percent);
-  ArmMotor.setTimeout(2, seconds);
-  ArmMotor.spinToPosition(-240, degrees); //raises above box
-  wait(1,seconds);
-  ClawMotor.setStopping(hold); 
-  ClawMotor.setMaxTorque(60, percent);
-  ClawMotor.setTimeout(2, seconds);
-  ClawMotor.spinToPosition(180, degrees); //opens the claw
-  wait(2,seconds);
-  ClawMotor.spinToPosition(0, degrees); //closes the claw
-  wait(1,seconds);
-  ArmMotor.setStopping(hold);
-  ArmMotor.setMaxTorque(60, percent);
-  ArmMotor.setTimeout(2, seconds);
-  ArmMotor.spinToPosition(-45, degrees); //set arm just above floor
-}
-
 int whenStarted() {
-  /*for(int i = 0; i < 3; i++) {
-    clawfloor();
-    drivepath();
-    clawbox();
-    drivepath();
-  }*/
   ArmMotor.setStopping(hold);
   ArmMotor.setMaxTorque(60, percent);
   ArmMotor.setTimeout(2, seconds);
   ArmMotor.spinToPosition(-45, degrees); //set arm just above floor
-  for(int i = 0; i < 6; i++) {
+  for(int i = 0; i < 4; i++) {
     clawoperator();
     drivepath();
   }
